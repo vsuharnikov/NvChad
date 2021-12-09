@@ -66,7 +66,7 @@ M.plugins = {
       bufferline = true, -- manage and preview opened buffers
       colorizer = false, -- color RGB, HEX, CSS, NAME color codes
       comment = true, -- easily (un)comment code, language aware
-      dashboard = false,
+      dashboard = true,
       esc_insertmode = true, -- map to <ESC> with no lag
       feline = true, -- statusline
       gitsigns = true,
@@ -208,6 +208,8 @@ M.mappings.plugins = {
          media_files = "<leader>fp",
       },
    },
+
+   metals = {}
 }
 
 return M

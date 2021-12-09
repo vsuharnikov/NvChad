@@ -233,6 +233,14 @@ return packer.startup(function()
          require("core.mappings").telescope()
       end,
    }
+
+   -- https://github.com/scalameta/nvim-metals
+   use {
+      "scalameta/nvim-metals",
+      requires = { "nvim-lua/plenary.nvim" },
+      config = override_req("metals", "plugins.configs.metals")
+   }
+
    -- load user defined plugins
    require("core.hooks").run("install_plugins", use)
 end)

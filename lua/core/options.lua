@@ -28,7 +28,19 @@ opt.relativenumber = options.relativenumber
 opt.ruler = options.ruler
 
 -- disable nvim intro
-opt.shortmess:append "sI"
+opt.shortmess:append "sIc"
+
+-- required for "nvim-metals"
+-- https://neovim.io/doc/user/options.html
+-- don't give the file info when editing a file, like `:silent`
+-- was used for the command; note that this also affects messages
+-- from autocommands
+opt.shortmess:remove "F"
+
+-- https://github.com/scalameta/nvim-metals/discussions/39
+-- Do not insert any text for a match until the user selects
+-- a match from the menu.
+opt.completeopt:append "noinsert"
 
 opt.signcolumn = "yes"
 opt.splitbelow = true
